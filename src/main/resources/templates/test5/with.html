@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--  타임리프를 사용하기 위해서는 html 태그에 다음과 같이 추가해준다. -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>th:with 변수를 선언합니다.</title>
+<link rel="icon" th:href="@{/image/house.ico}">
+<link rel="stylesheet"
+	  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<!-- 변수 정의 합니다. -->
+		<ul th:with="num=${listcount-(page-1)*limit}">
+			<li th:each="i : ${#numbers.sequence(1, num)}">
+				[[${i}]]
+			</li>		
+		</ul>
+	</div>
+</body>
+</html>
